@@ -1,5 +1,4 @@
 import re
-import functools
 
 parse_instruction = re.compile(r"^move (\d+) from (\d+) to (\d+)$")
 parse_crate = re.compile(r"^(?:\[(\w)\]| {3}) ?(.*)$")
