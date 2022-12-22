@@ -40,6 +40,6 @@ def water(air):
 watered = water(air)
 part2 = sum(
 	1 for x, y, z in inputs for dx, dy, dz in possibilities 
-	if [x+dx, y+dy, z+dz] not in inputs and [x+dx, y+dy, z+dz] not in snuggled
+	if [x+dx, y+dy, z+dz] not in inputs and [x+dx, y+dy, z+dz] not in watered
 )
 print(part2)
