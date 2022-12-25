@@ -36,21 +36,18 @@ def heap_push(heap, minutes,
 def do(blueprint, minutes, 
 	ore_robots, clay_robots, obsidian_robots, geode_robots, 
 	ore, clay, obsidian, geode):
-	print(blueprint.num)
 	heap = []
 	visited = set() 
 
 	heap_push(heap, minutes, ore_robots, clay_robots, obsidian_robots, geode_robots, ore, clay, obsidian, geode)
 
 	while heap:
-		mm, value = heapq.heappop(heap)
+		_, value = heapq.heappop(heap)
 		if value in visited:
 			continue
 		else:
 			visited.add(value)
-		(
-			minutes, ore_robots, clay_robots, obsidian_robots, geode_robots, ore, clay, obsidian, geode
-		) = value
+		(minutes, ore_robots, clay_robots, obsidian_robots, geode_robots, ore, clay, obsidian, geode) = value
 
 		if minutes == 0:
 			return geode
