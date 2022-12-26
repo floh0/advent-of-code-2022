@@ -1,9 +1,7 @@
 import re
 
 with open("day21.input") as f:
-	inputs = { key: value 
-		for key,value in map(lambda line: line.strip().split(": "), f)
-	}
+	inputs = list(map(lambda line: line.strip().split(": "), f))
 
 def do(instructions):
 	values = {}
@@ -19,7 +17,7 @@ def do(instructions):
 			break
 	return values
 
-part1 = do(inputs.items())["root"]
+part1 = do(inputs)["root"]
 print(part1)
 
 parse = re.compile(r"(\w+) (.) (\w+)")
@@ -30,7 +28,7 @@ opposite = {
 	"/": "*"
 }
 def transform(inputs):
-	for key, value in inputs.items():
+	for key, value in inputs:
 		parsed = parse.match(value)
 		if parsed:
 			left, symbol, right = parsed.groups()
