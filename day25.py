@@ -1,7 +1,7 @@
 with open("day25.input") as f:
 	lines = list(map(lambda line: line.strip(), f))
 
-snapy_to_decimal = {
+snafu_to_decimal = {
 	"2": 2,
 	"1": 1,
 	"0": 0,
@@ -9,7 +9,7 @@ snapy_to_decimal = {
 	"=": -2
 }
 
-decimal_to_snapy = {
+decimal_to_snafu = {
 	0: ("0", lambda x: x),
 	1: ("1", lambda x: x),
 	2: ("2", lambda x: x),
